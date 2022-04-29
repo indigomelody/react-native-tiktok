@@ -1,4 +1,4 @@
-iosVersion = '13.0'
+iosVersion = '14.0'
 platform :ios, iosVersion
 
 target 'Tiktok' do
