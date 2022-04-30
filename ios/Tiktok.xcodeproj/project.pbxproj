@@ -35,7 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F9931B227C9947700C85A6D /* TikTokTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TikTokTests.xctest; path = "/Users/jdumay/code/gifted/react-native-tiktok/ios/build/Debug-iphoneos/TikTokTests.xctest"; sourceTree = "<absolute>"; };
+		0F7F4131281D06A7003C1E02 /* TikTokTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TikTokTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		134814201AA4EA6300B7C361 /* libTiktok.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiktok.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3BEBCB774F1F31922272F4 /* Pods_Tiktok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tiktok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA9A076BA4EC17CC3AA7512 /* Pods-Tiktok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiktok.release.xcconfig"; path = "Target Support Files/Pods-Tiktok/Pods-Tiktok.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +93,7 @@
 				134814211AA4EA7D00B7C361 /* Products */,
 				4C2F06666AC2727B72554387 /* Pods */,
 				CA64ADE7C376A18B700AF36F /* Frameworks */,
+				0F7F4131281D06A7003C1E02 /* TikTokTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,7 +123,7 @@
 			);
 			name = TikTokTests;
 			productName = TikTokTests;
-			productReference = 0F9931B227C9947700C85A6D /* TikTokTests.xctest */;
+			productReference = 0F7F4131281D06A7003C1E02 /* TikTokTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		58B511DA1A9E6C8500147676 /* Tiktok */ = {
@@ -328,6 +329,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -378,6 +380,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
