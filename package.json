@@ -1,6 +1,6 @@
 {
   "name": "@hashgifted/react-native-tiktok",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Get authorized and fetch user profile, share videos",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
