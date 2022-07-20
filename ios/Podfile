@@ -2,7 +2,6 @@ iosVersion = '14.0'
 platform :ios, iosVersion
 
 target 'Tiktok' do
-  use_frameworks!
   pod 'TikTokOpenSDK', '~> 5.0.0'
 
   post_install do |installer|
