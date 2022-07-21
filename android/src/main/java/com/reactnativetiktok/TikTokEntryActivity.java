@@ -3,31 +3,27 @@ package com.reactnativetiktok;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Pair;
-import android.widget.Toast;
-import com.bytedance.sdk.open.aweme.TikTokOpenApiFactory;
-import com.bytedance.sdk.open.aweme.api.TikTokApiEventHandler;
-import com.bytedance.sdk.open.aweme.api.TiktokOpenApi;
-import com.bytedance.sdk.open.aweme.authorize.model.Authorization;
-import com.bytedance.sdk.open.aweme.common.model.BaseReq;
-import com.bytedance.sdk.open.aweme.common.model.BaseResp;
-import com.bytedance.sdk.open.aweme.share.Share;
+import com.bytedance.sdk.open.tiktok.TikTokOpenApiFactory;
+import com.bytedance.sdk.open.tiktok.authorize.model.Authorization;
+import com.bytedance.sdk.open.tiktok.common.handler.IApiEventHandler;
+import com.bytedance.sdk.open.tiktok.common.model.BaseReq;
+import com.bytedance.sdk.open.tiktok.common.model.BaseResp;
+import com.bytedance.sdk.open.tiktok.api.TikTokOpenApi;
+import com.bytedance.sdk.open.tiktok.share.Share;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
-import java.util.Properties;
-
-public class TikTokEntryActivity extends ReactActivity implements TikTokApiEventHandler {
-    TiktokOpenApi ttOpenApi;
+public class TikTokEntryActivity extends ReactActivity implements IApiEventHandler {
+    TikTokOpenApi ttOpenApi;
 
     public void onReq(BaseReq baseReq) {}
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        TiktokOpenApi create = TikTokOpenApiFactory.create(this);
+        TikTokOpenApi create = TikTokOpenApiFactory.create(this);
         this.ttOpenApi = create;
         create.handleIntent(getIntent(), this);
     }
