@@ -16,7 +16,12 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
+import java.util.logging.Logger;
+
 public class TikTokEntryActivity extends ReactActivity implements IApiEventHandler {
+
+    private static Logger LOGGER = Logger.getLogger(TikTokEntryActivity.class.getName());
+
     TikTokOpenApi ttOpenApi;
 
     public void onReq(BaseReq baseReq) {}
@@ -29,20 +34,25 @@ public class TikTokEntryActivity extends ReactActivity implements IApiEventHandl
     }
 
     public void onResp(BaseResp baseResp) {
+        LOGGER.info("Recieved response of type " + baseResp.getClass().getName());
         if (baseResp instanceof Authorization.Response) {
             Authorization.Response response = (Authorization.Response) baseResp;
             WritableMap params = Arguments.createMap();
+            LOGGER.info("Auth response received with error code " + response.errorCode);
+            LOGGER.info("Auth response received with auth code " + response.authCode);
+            LOGGER.info("Auth response received with permissions " + response.grantedPermissions);
+            LOGGER.info("Auth response received with state " + response.state);
             params.putInt("status", response.errorCode);
             params.putString("code", response.authCode);
             ReactContext ctx = getReactNativeHost().getReactInstanceManager().getCurrentReactContext();
             ctx.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("onAuthCompleted", params);
-            finish();
+            System.out.println("Auth completed");
         } else if (baseResp instanceof Share.Response) {
             Share.Response response = (Share.Response) baseResp;
             ReactContext ctx = getReactNativeHost().getReactInstanceManager().getCurrentReactContext();
             ctx.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("onShareCompleted", response.subErrorCode);
-            finish();
         }
+        finish();
     }
 
     public void onErrorIntent(Intent intent) {
