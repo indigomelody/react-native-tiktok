@@ -30,7 +30,7 @@ public class TiktokModule extends ReactContextBaseJavaModule {
     public static final String NAME = "Tiktok";
 
     private void Share(String path) {
-      TikTokOpenApi tiktokOpenApi = TikTokOpenApiFactory.create(getReactApplicationContext().getCurrentActivity());
+      TikTokOpenApi tiktokOpenApi = TikTokOpenApiFactory.create(getCurrentActivity());
       Share.Request request = new Share.Request();
       request.callerLocalEntry = "com.reactnativetiktok.TikTokEntryActivity";
       ArrayList<String> mUri = new ArrayList<>();
@@ -73,9 +73,9 @@ public class TiktokModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void auth(Callback callBack) {
-      TikTokOpenApi tiktokOpenApi = TikTokOpenApiFactory.create(getReactApplicationContext().getCurrentActivity());
+      TikTokOpenApi tiktokOpenApi = TikTokOpenApiFactory.create(getCurrentActivity());
       Authorization.Request request = new Authorization.Request();
-      request.scope = "user.info.basic,video.list";
+      request.scope = "user.info.basic";
       request.callerLocalEntry = "com.reactnativetiktok.TikTokEntryActivity";
       tiktokOpenApi.authorize(request);
     }

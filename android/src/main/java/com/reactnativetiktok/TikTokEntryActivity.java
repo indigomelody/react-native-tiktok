@@ -3,12 +3,14 @@ package com.reactnativetiktok;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
+import android.widget.Toast;
 import com.bytedance.sdk.open.tiktok.TikTokOpenApiFactory;
-import com.bytedance.sdk.open.tiktok.authorize.model.Authorization;
 import com.bytedance.sdk.open.tiktok.common.handler.IApiEventHandler;
+import com.bytedance.sdk.open.tiktok.api.TikTokOpenApi;
+import com.bytedance.sdk.open.tiktok.authorize.model.Authorization;
 import com.bytedance.sdk.open.tiktok.common.model.BaseReq;
 import com.bytedance.sdk.open.tiktok.common.model.BaseResp;
-import com.bytedance.sdk.open.tiktok.api.TikTokOpenApi;
 import com.bytedance.sdk.open.tiktok.share.Share;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.bridge.Arguments;
@@ -19,9 +21,6 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import java.util.logging.Logger;
 
 public class TikTokEntryActivity extends ReactActivity implements IApiEventHandler {
-
-    private static Logger LOGGER = Logger.getLogger(TikTokEntryActivity.class.getName());
-
     TikTokOpenApi ttOpenApi;
 
     public void onReq(BaseReq baseReq) {}
